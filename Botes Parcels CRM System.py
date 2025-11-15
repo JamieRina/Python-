@@ -70,7 +70,7 @@ def total_menu():
 
 def get_total_data(total_menu_choice):
     
-    issues = pd.read_csv("Task4a_data.csv")
+    issues = pd.read_csv("Task_data.csv")
     
     total = issues['Issue Type'].value_counts()[total_menu_choice]
 
@@ -80,7 +80,7 @@ def get_total_data(total_menu_choice):
 
 def data_issue_time():
     
-    df = pd.read_csv("Task4a_data.csv")
+    df = pd.read_csv("Task_data.csv")
     
     df1 = df.groupby('Issue Type')['Days To Resolve'].mean().sort_values()
     print(df1)
@@ -97,7 +97,7 @@ def data_issue_time():
 
 def issue_by_region():
 
-    df = pd.read_csv("Task4a_data.csv")
+    df = pd.read_csv("Task_data.csv")
     df1 = df.groupby(['Region','Issue Type']).size().unstack(fill_value=0)
 
     print(df1)
@@ -133,3 +133,4 @@ elif main_menu_choice == "3":
 else:
     print("you have exited the program goodbye !!!!")
     quit 
+
